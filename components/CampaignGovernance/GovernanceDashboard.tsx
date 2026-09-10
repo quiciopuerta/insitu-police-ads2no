@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NamingBuilder } from './NamingBuilder';
+import { LiveBudgetControl } from './LiveBudgetControl';
 import { User } from '../../types';
 
 interface GovernanceDashboardProps {
@@ -60,13 +61,7 @@ export const GovernanceDashboard: React.FC<GovernanceDashboardProps> = ({ curren
       )}
       
       {activeSubTab === 'budget' && (
-        <div className="bg-slate-800/50 rounded-2xl border border-slate-700 p-12 text-center">
-          <span className="material-symbols-outlined text-6xl text-slate-600 mb-4">monitoring</span>
-          <h3 className="text-xl font-bold text-white mb-2">{L('Control de Gasto Real en Construcción', 'Live Spend Control under construction')}</h3>
-          <p className="text-slate-400 max-w-md mx-auto">
-            {L('Aquí podrás comparar el presupuesto planificado vs. el gasto real extrayendo datos directo de Google Ads y Meta.', 'Here you will compare planned budget vs. real spend pulling live data from Google Ads and Meta.')}
-          </p>
-        </div>
+        <LiveBudgetControl currentUser={currentUser} language={language} />
       )}
     </div>
   );
