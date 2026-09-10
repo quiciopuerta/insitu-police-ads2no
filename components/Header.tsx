@@ -125,12 +125,6 @@ const Header: React.FC<HeaderProps> = ({
       description: language === "es" ? "Automatización IA" : "AI Automation",
       locked: false,
     },
-    {
-      id: "police-ads",
-      label: "Police Ads",
-      description: language === "es" ? "Centro de Control" : "Command Center",
-      locked: false,
-    },
   ].filter((item) => {
     // Feature flag check with safe fallback
     if (item.id === "analyzer")

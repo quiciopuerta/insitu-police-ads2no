@@ -3,7 +3,7 @@ export type SubscriptionStatus = 'active' | 'inactive' | 'expired';
 export type ApprovalStatus = 'pending' | 'approved' | 'rejected' | 'invited';
 export type PlanTier = 'Starter' | 'Growth' | 'Agency';
 export type Language = 'es' | 'en';
-export type TabType = 'analyzer' | 'search' | 'image-ai' | 'video-ai' | 'image-audit' | 'video-audit' | 'compare-ai' | 'campaigns' | 'brand-guardian' | 'blog' | 'traffic-checker' | 'brand-identity' | 'metrics' | 'gen-ads' | 'creative-lab' | 'research-hub' | 'funnel-architect' | 'mass-ads' | 'automation-rules' | 'portavoz' | 'flow' | 'scripts' | 'police-ads';
+export type TabType = 'analyzer' | 'search' | 'image-ai' | 'video-ai' | 'image-audit' | 'video-audit' | 'compare-ai' | 'campaigns' | 'brand-guardian' | 'blog' | 'traffic-checker' | 'brand-identity' | 'metrics' | 'gen-ads' | 'creative-lab' | 'research-hub' | 'funnel-architect' | 'mass-ads' | 'automation-rules' | 'portavoz' | 'flow' | 'scripts' | 'police-ads' | 'governance';
 
 export interface AdVideoOptions {
   aspectRatio: '1:1' | '16:9' | '9:16';

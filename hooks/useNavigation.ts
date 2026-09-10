@@ -5,7 +5,7 @@ import { blogService } from '../services/blogService';
 
 
 
-const VALID_TABS: TabType[] = ['analyzer', 'search', 'police-ads', 'image-ai', 'video-ai', 'image-audit', 'video-audit', 'campaigns', 'brand-guardian', 'blog', 'traffic-checker', 'brand-identity', 'metrics', 'gen-ads', 'creative-lab', 'funnel-architect', 'mass-ads', 'automation-rules', 'portavoz', 'scripts', 'flow'];
+const VALID_TABS: TabType[] = ['analyzer', 'search', 'image-ai', 'video-ai', 'image-audit', 'video-audit', 'campaigns', 'brand-guardian', 'blog', 'traffic-checker', 'brand-identity', 'metrics', 'gen-ads', 'creative-lab', 'funnel-architect', 'mass-ads', 'automation-rules', 'portavoz', 'scripts', 'flow', 'governance'];
 const VALID_FEATURE_TABS = ['video', 'image', 'animate', 'audio', 'retail', 'master', 'ads', 'research', 'compare', 'image-audit', 'video-audit', 'portavoz', 'flow'];
 
 // Map URLs to creative-lab featureTabs
@@ -22,11 +22,11 @@ const MODAL_PATHS = ['terms', 'privacy', 'glossary', 'pricing', 'technology', 'a
 
 function parseInitialTab(): TabType {
     const fullPath = window.location.pathname.slice(1).split('/')[0];
-    if (MODAL_PATHS.includes(fullPath)) return 'police-ads';
+    if (MODAL_PATHS.includes(fullPath)) return 'analyzer';
     if (fullPath.startsWith('blog')) return 'blog';
     if (fullPath.startsWith('creative-lab')) return 'creative-lab';
     if (CREATIVE_TAB_ROUTES[fullPath]) return 'creative-lab';
-    return (VALID_TABS.includes(fullPath as TabType) ? (fullPath as TabType) : 'police-ads');
+    return (VALID_TABS.includes(fullPath as TabType) ? (fullPath as TabType) : 'analyzer');
 }
 
 function parseInitialFeatureTab(): string | null {
@@ -95,7 +95,7 @@ export const useNavigation = () => {
             } else if (path && VALID_TABS.includes(path as TabType)) {
                 setActiveTab(path as TabType);
             } else if (!path || MODAL_PATHS.includes(path)) {
-                setActiveTab('police-ads');
+                setActiveTab('analyzer');
             }
         };
 
@@ -121,7 +121,7 @@ export const useNavigation = () => {
         } else if (MODAL_PATHS.includes(activeTab)) {
             return; // modal routes don't change the URL
         } else {
-            desiredPath = activeTab === 'police-ads' ? '/' : `/${activeTab}`;
+            desiredPath = activeTab === 'analyzer' ? '/' : `/${activeTab}`;
         }
 
         if (window.location.pathname !== desiredPath) {

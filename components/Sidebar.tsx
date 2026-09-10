@@ -56,8 +56,14 @@ const Sidebar: React.FC<SidebarProps> = ({
     {
       label: language === 'es' ? 'Herramientas' : 'Tools',
       items: [
-        { id: 'police-ads', icon: 'local_police', label: 'Police Ads', color: 'text-red-400' },
         { id: 'scripts', icon: 'code', label: 'Script Gen', color: 'text-lime-400' },
+      ]
+    },
+    {
+      label: language === 'es' ? 'Herramientas Hermanas' : 'Sister Tools',
+      items: [
+        { id: 'governance', icon: 'account_balance', label: language === 'es' ? 'Gobernanza CRM' : 'CRM Governance', color: 'text-emerald-400' },
+        { id: 'police-ads', icon: 'local_police', label: 'Police Ads', color: 'text-red-400' },
       ]
     }
   ];
