@@ -36,6 +36,7 @@ scripts/*
 !scripts/security-tests.sh
 !scripts/gcp-to-netlify.sh
 !scripts/security_check.js
+!scripts/shared_database_schema.sql
 # Build outputs
 production_update.zip
 video-lab/build/
@@ -45,3 +46,9 @@ build_output.log
 *.db
 *.sqlite
 *.sqlite3
+
+# Agent skills symlinks
+agent/
+data/skills/
+.claude/
+
